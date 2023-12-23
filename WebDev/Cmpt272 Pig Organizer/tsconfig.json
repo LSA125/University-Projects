@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "module": "system",
+        "strict": true
+    },
+    "lib": ["ES6"],
+    "files": ["class.ts","script.ts"]
+}

@@ -1,0 +1,122 @@
+body{
+    margin: 0px;
+    width: 100vw;
+    height: 740px;
+    background-color: #A6192E;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#container{
+    min-width: 450px;
+    min-height: 500px;
+    padding: 1vh 1vw 1vh 1vw;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0px 0px 5px black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap:10px;
+    height: 685px;
+    width: 92vw;
+}
+#content{
+    width:100%;
+    height: 80%;
+    display: grid;
+    grid-gap: 10%;
+    grid-template-columns: 2;
+    grid-template-rows: 2;
+}
+header{
+
+    height: 10%;
+    min-width:330px;
+}
+#superSecretID{
+    font-size: auto;
+    height: 5%;
+    width: fit-content;
+}
+#lowerBounds{
+    width: auto;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    padding: 2%;
+    background-color: rgb(231, 231, 231);
+    border-radius: 4px;
+}
+section>h4{
+    margin: 0;
+    height:19px;
+    margin-bottom: 30px;
+    color:#c91a34;
+}
+table{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height:calc(100% - 49px);
+}
+tbody{
+    height: 100%;
+    width: 100%;
+    display:grid;
+    grid-template-columns: 2;
+}
+
+tr{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-left: 15%;
+    padding-right: 15%;
+}
+td{
+    white-space: nowrap;
+    width: 50%;
+}
+.histogramData{
+    text-align: left;
+}
+#lowerBounds input{
+    width: 60px;
+    height: 25px;
+    position: relative;
+    bottom: 7px;
+    font-size: large;
+    margin:0;
+}
+#histogram{
+    overflow: auto;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    padding: 2%;
+    background-color: rgb(231, 231, 231);
+    border-radius: 4px;
+}
+#histogram tr{
+    display: grid;
+    grid-template-columns: repeat(2, 50px);
+    padding-left: 30px;
+    padding-right: 30px;
+}
+#stats{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    padding: 2%;
+    background-color: rgb(231, 231, 231);
+    border-radius: 4px;
+}
+/* From: https://stackoverflow.com/questions/3790935/can-i-hide-the-html5-number-input-s-spin-box */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}

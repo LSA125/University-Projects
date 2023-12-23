@@ -1,0 +1,128 @@
+body{
+    margin: 0px;
+    width: 100vw;
+    height: 740px;
+    background-color: blanchedalmond;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.infoTableKey{
+    width:50%;
+    font-size: larger;
+}
+#infoTable{
+    width: 90%;
+}
+.infoTableVal{
+    font-weight: normal;
+    width:50%;
+}
+.data{
+    margin: 5px 5px 5px 5px;
+    height: 30px;
+    font-weight: normal;
+    font-size: smaller;
+}
+header{
+    margin: 0;
+    width: 100%;
+    background-color: brown;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+}
+header > h1{
+    width:auto;
+    color:white;
+    white-space: nowrap;
+}
+#container{
+    min-width: 930px;
+    min-height: 605px;
+    margin-top: 30px;
+    padding: 1vh 1vw 1vh 1vw;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0px 0px 5px black;
+    display: grid;
+    grid-template-columns: 6;
+    grid-template-rows: 5;
+    grid-gap: 5%;
+    width: 92vw;
+}
+#display{
+    grid-column-start: 2;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 5;
+    padding: 2%;
+    background-color: rgb(231, 231, 231);
+    border-radius: 4px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: x-large;
+}
+#add{
+    grid-column-start: 2;
+    grid-column-end: 6;
+    grid-row-start: 5;
+    grid-row-end: 5;
+    padding: 2%;
+    background-color: rgb(231, 231, 231);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    min-width: 380px;
+}
+#add button{
+    height:100%;
+    width:200px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    border: 1px solid black;
+    font-size: x-large;
+}
+#submitButton{
+    margin-top: 20px;
+    width: 80px;
+    height: 30px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    border: 1px solid black;
+    
+}
+#submitButton:hover,#add button:hover{
+    background-color: rgb(225,225,225);
+}
+#submitButton:active, #add button:active{
+    background-color: rgb(195, 195, 195);
+}
+#piglist{
+    width: auto;
+    grid-row-start: 1;
+    grid-row-end: 6;
+    padding: 2%;
+    background-color: rgb(231, 231, 231);
+    border-radius: 4px;
+    overflow-y: scroll;
+}
+table{
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+.widerCol{
+    width: 150px;
+}
+td,th{
+    width: 50px;
+    border: 2px solid black;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-weight: bold;
+}

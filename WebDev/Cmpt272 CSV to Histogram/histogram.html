@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="js/calculate.js" async></script>
+    <title>Histrogram Generator</title>
+    <link rel="stylesheet" href="css/histogram.css">
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>Histogram Generator</h1>
+        </header>
+        <input type="file" name="filename" id="superSecretID" accept=".csv">
+        <div id="content">
+            <section id="lowerBounds">
+                <h4>Lower bounds</h4>
+                <table>
+                    <tr><td>Max</td><td><input type="number" step="0.01" value="100.00"></td></tr>
+                    <tr><td>A+</td><td><input type="number" step="0.01" value="95.00"></td></tr>
+                    <tr><td>A</td><td><input type="number" step="0.01" value="90.00"></td></tr>
+                    <tr><td>A-</td><td><input type="number" step="0.01" value="85.00"></td></tr>
+                    <tr><td>B+</td><td><input type="number" step="0.01" value="80.00"></td></tr>
+                    <tr><td>B</td><td><input type="number" step="0.01" value="75.00"></td></tr>
+                    <tr><td>B-</td><td><input type="number" step="0.01" value="70.00"></td></tr>
+                    <tr><td>C+</td><td><input type="number" step="0.01" value="65.00"></td></tr>
+                    <tr><td>C</td><td><input type="number" step="0.01" value="60.00"></td></tr>
+                    <tr><td>C-</td><td><input type="number" step="0.01" value="55.00"></td></tr>
+                    <tr><td>D</td><td><input type="number" step="0.01" value="50.00"></td></tr>
+                    <tr><td>F</td><td><input type="number" step="0.01" value="0.00"></td></tr>
+                </table>
+            </section>
+            <section  id="histogram">
+                <h4>Histogram</h4>
+                <table>
+                    <tr><td>A+</td><td class="histogramData"></td></tr>
+                    <tr><td>A</td><td class="histogramData"></td></tr>
+                    <tr><td>A-</td><td class="histogramData"></td></tr>
+                    <tr><td>B+</td><td class="histogramData"></td></tr>
+                    <tr><td>B</td><td class="histogramData"></td></tr>
+                    <tr><td>B-</td><td class="histogramData"></td></tr>
+                    <tr><td>C+</td><td class="histogramData"></td></tr>
+                    <tr><td>C</td><td class="histogramData"></td></tr>
+                    <tr><td>C-</td><td class="histogramData"></td></tr>
+                    <tr><td>D</td><td class="histogramData"></td></tr>
+                    <tr><td>F</td><td class="histogramData"></td></tr>
+                </table>
+            </section>
+            <section id="stats">
+                <h4>Stats</h4>
+                <table>
+                    <tr><td>Highest</td><td id="highest"></td></tr>
+                    <tr><td>Lowest</td><td id="lowest"></td></tr>
+                    <tr><td>Mean</td><td id="mean"></td></tr>
+                    <tr><td>Median</td><td id="median"><p></p></td></tr>
+                </table>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
