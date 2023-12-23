@@ -1,0 +1,18 @@
+<table>
+    <tr>
+      <th class="sortable" (click)="sort('location')">Location</th>
+      <th class="sortable" (click)="sort('name')">Baddie's Name</th>
+      <th class="sortable" (click)="sort('time')">Time Reported</th>
+      <th class="sortable" (click)="sort('status')">Status</th>
+      <th></th> <!-- More Info column -->
+      <th><button class="add-new-button" routerLink="/add">Add New</button></th> <!-- Add New button column -->
+    </tr>
+    <tr *ngFor="let report of reports">
+      <td>{{ report.locationName }}</td>
+      <td>{{ report.villainName }}</td>
+      <td>{{ report.dateTime | date: 'medium' }}</td>
+      <td>{{ report.status }}</td>
+      <td><button class="moreInfo" (click)="openReportDetails(report)">More Info</button></td>
+      <td><button (click)="delete($event,report)">Delete</button></td>
+    </tr>
+</table>

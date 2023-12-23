@@ -1,0 +1,60 @@
+
+<form [formGroup]="addReportForm" class="form1" autocomplete="off">
+  <div class="fcontainer">
+    <label for="witnessName">Witness Name:</label>
+    <input type="text" id="witnessName" formControlName="witnessName"
+    [class.valid]="addReportForm.controls['witnessName'].valid"
+    [class.invalid]="addReportForm.controls['witnessName'].invalid && (addReportForm.controls['witnessName'].dirty || addReportForm.controls['witnessName'].touched)">
+    <small class="text-danger" *ngIf="addReportForm.controls['witnessName'].errors?.['required']"> *This field is required</small>
+
+    <label for="witnessPhoneNumber">Witness Phone Number:</label>
+    <input type="text" id="witnessPhoneNumber" formControlName="witnessPhoneNumber"
+    [class.valid]="addReportForm.controls['witnessPhoneNumber'].valid"
+    [class.invalid]="addReportForm.controls['witnessPhoneNumber'].invalid && (addReportForm.controls['witnessPhoneNumber'].dirty || addReportForm.controls['witnessPhoneNumber'].touched)">
+    <small class="text-danger" *ngIf="addReportForm.controls['witnessPhoneNumber'].errors?.['required']"> *This field is required</small>
+    <small class="text-danger" *ngIf="addReportForm.controls['witnessPhoneNumber'].errors?.['pattern']"> *enter a valid phone number</small>
+    <label for="villainName">Villain Name:</label>
+    <input type="text" id="villainName" formControlName="villainName"
+    [class.valid]="addReportForm.controls['villainName'].valid"
+    [class.invalid]="addReportForm.controls['villainName'].invalid && (addReportForm.controls['villainName'].dirty || addReportForm.controls['villainName'].touched)">
+    <small class="text-danger" *ngIf="addReportForm.controls['villainName'].errors?.['required']"> *This field is required</small>
+    <button mat-raised-button color="primary" (click)="onAddClick()" [disabled]="addReportForm.invalid">Add Report</button>
+  </div>
+  <div class="fcontainer">
+    <label for="locationName">Location Name:</label>
+    <select id="locationName" formControlName="locationName">
+        <option *ngFor="let location of locations" [value]="location.name">{{ location.name }}</option>
+    </select>
+    <small class="text-danger" *ngIf="addReportForm.controls['locationName'].errors?.['required']"> *This field is required</small>
+    <label for="pictureLink">Picture Link:</label>
+    <input type="text" id="pictureLink" formControlName="pictureLink"
+    [class.valid]="addReportForm.controls['pictureLink'].valid && (addReportForm.controls['pictureLink'].dirty || addReportForm.controls['pictureLink'].touched)"
+    [class.invalid]="addReportForm.controls['pictureLink'].invalid">
+    <small class="text-danger" *ngIf="addReportForm.controls['pictureLink'].errors?.['pattern']"> *Enter a valid link</small>
+    <label for="extraInfo">Extra Info:</label>
+    <textarea id="extraInfo" formControlName="extraInfo"></textarea>
+    <button mat-button (click)="onCancelClick()">Cancel</button>
+  </div>
+</form>
+
+<form [formGroup]="addLocationForm" class="form2" autocomplete="off">
+  <h1>Add New Location</h1>
+  <label for="name">Location Name:</label>
+  <input type="text" id="name" formControlName="name"
+  [class.valid]="addLocationForm.controls['name'].valid"
+  [class.invalid]="addLocationForm.controls['name'].invalid && (addLocationForm.controls['name'].dirty || addLocationForm.controls['name'].touched)">
+  <small class="text-danger" *ngIf="addLocationForm.controls['name'].errors?.['required'] && addLocationForm.controls['name'].invalid && (addLocationForm.controls['name'].dirty || addLocationForm.controls['name'].touched)"> *This field is required</small>
+  <small class="text-danger" *ngIf="addLocationForm.controls['name'].errors?.['duplicateName'] && addLocationForm.controls['name'].invalid && (addLocationForm.controls['name'].dirty || addLocationForm.controls['name'].touched)"> *Location name must be unique</small>
+  <label for="latitude">Latitude:</label>
+  <input type="text" id="latitude" formControlName="latitude"  [class.valid]="addLocationForm.controls['latitude'].valid"
+  [class.invalid]="addLocationForm.controls['latitude'].invalid && (addLocationForm.controls['latitude'].dirty || addLocationForm.controls['latitude'].touched)">
+  <small class="text-danger" *ngIf="addLocationForm.controls['latitude'].errors?.['required'] && addLocationForm.controls['latitude'].invalid && (addLocationForm.controls['latitude'].dirty || addLocationForm.controls['latitude'].touched)"> *This field is required</small>
+  <small class="text-danger" *ngIf="addLocationForm.controls['latitude'].errors?.['pattern'] && addLocationForm.controls['latitude'].invalid && (addLocationForm.controls['latitude'].dirty || addLocationForm.controls['latitude'].touched)"> *This field must be a number</small>
+  <label for="longitude">Longitude:</label>
+  <input type="text" id="longitude" formControlName="longitude" [class.valid]="addLocationForm.controls['longitude'].valid"
+  [class.invalid]="addLocationForm.controls['longitude'].invalid && (addLocationForm.controls['longitude'].dirty || addLocationForm.controls['longitude'].touched)">
+  <small class="text-danger" *ngIf="addLocationForm.controls['longitude'].errors?.['required'] && addLocationForm.controls['longitude'].invalid && (addLocationForm.controls['longitude'].dirty || addLocationForm.controls['longitude'].touched)"> *This field is required</small>
+  <small class="text-danger" *ngIf="addLocationForm.controls['longitude'].errors?.['pattern'] && addLocationForm.controls['longitude'].invalid && (addLocationForm.controls['longitude'].dirty || addLocationForm.controls['longitude'].touched)"> *This field must be a number</small>
+  <button mat-raised-button color="primary" (click)="onSelectClick()">Use Click Coordinates</button>
+  <button mat-raised-button color="primary" (click)="onLocationClick()">Add Location</button>
+</form>

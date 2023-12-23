@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100vh; width: 100vw; }
+body { margin: 0;}
+.cdk-global-overlay-wrapper{
+    position: absolute;
+    right:10px;
+    top: 10px;
+    width:auto;
+    z-index: 1000;
+    margin: 0;
+}
+#map { 
+    height: 60%; 
+    width: 100%;
+    margin: 0;
+    top: 0;
+    z-index: 0
+}

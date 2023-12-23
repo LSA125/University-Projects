@@ -1,0 +1,23 @@
+<div class="dialog-header">
+    <span class="close-btn" (click)="closeDialog()">&times;</span>
+</div>
+<div class="dialog-content">
+    <h2>Report Details</h2>
+    <div class="details-container">
+        <div class="text-details">
+        <p><strong>Location:</strong> {{ data.report.locationName }}</p>
+        <p><strong>Baddie's Name:</strong> {{ data.report.villainName }}</p>
+        <p><strong>Reported by: </strong>{{data.report.witnessName}} ({{data.report.witnessPhoneNumber}})</p>
+        <p><strong>Time Reported:</strong> {{ data.report.dateTime | date: 'medium' }}</p>
+        <div class="status-container">
+            <button mat-button color="primary" (click)="toggleStatus()">
+            {{ data.report.status === 'OPEN' ? 'OPEN' : 'RESOLVED' }}
+            </button>
+        </div>
+        <p><strong>Extra Info:</strong> {{ data.report.extraInfo }}</p>
+        </div>
+        <div class="image-details" *ngIf="data.report.pictureLink">
+        <img [src]="data.report.pictureLink" alt="Report Image" class="report-image">
+        </div>
+    </div>
+</div>
