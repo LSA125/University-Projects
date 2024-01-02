@@ -1,0 +1,17 @@
+gcc -Wall -Wpedantic -std=c17 -march=haswell -O3 -g -c tests.c lab7.S \
+&& gcc -Wall -Wpedantic -std=c17 -march=haswell -O3 tests.o lab7.o \
+&& ./a.out
+
+for running tests
+
+gcc -Wall -Wpedantic -std=c17 -march=haswell -O3 -g -c timing.c lab7c.c lab7.S \
+&& gcc -Wall -Wpedantic -std=c17 -march=haswell -O3 timing.o lab7c.o lab7.o \
+&& ./a.out
+
+for timed run
+
+dot_c(1.72) > dot(2.07) > dot_struct(2.54) > dot_struct_c(2.72)
+on the csil computers
+
+unfortunately it seems my assembly code is a lot slower than the compiler's
+although i have it beat when it comes to structs

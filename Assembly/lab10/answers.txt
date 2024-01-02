@@ -1,0 +1,19 @@
+1/2 same results:
+             dot_double_c took    22.1 ms
+               dot_double took    23.1 ms
+             dot_single_c took    18.7 ms
+               dot_single took    19.3 ms
+       map_poly_double_c1 took    26.9 ms
+       map_poly_double_c2 took    26.3 ms
+          map_poly_double took    31.8 ms
+        map_poly_single_c took    13.1 ms
+          map_poly_single took    20.0 ms
+          
+the compiler still writes faster code, and the single precision code takes considerably less time than the double precision code across both functions
+
+
+3:
+                  sin_x87 took    25.6 ms
+               sin_stdlib took     7.7 ms
+
+the standard library ran in 30% of the time that x87 implementation ran

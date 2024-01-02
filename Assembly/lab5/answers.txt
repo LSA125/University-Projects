@@ -1,0 +1,26 @@
+1. I ran this code in the CSIL Lab computers
+Model name:                      Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz
+Stepping:                        10
+CPU MHz:                         4364.500
+CPU max MHz:                     4600.0000
+CPU min MHz:                     800.0000
+
+
+2. tests run:
+polynomial1(3,2,7,-1,2) calculated      11600000000 in    337527670 cycles
+polynomial2(3,2,7,-1,2) calculated      11600000000 in    206579927 cycles
+polynomial3(3,2,7,-1,2) calculated      11600000000 in    212247677 cycles
+is_odd1(7) + is_odd1(8) calculated        100000000 in   3430228097 cycles
+is_odd2(7) + is_odd2(8) calculated        100000000 in    526618198 cycles
+is_odd3(7) + is_odd3(8) calculated        100000000 in    552875684 cycles
+              mul1(123) calculated  806105100000000 in    135750018 cycles
+              mul2(123) calculated  806105100000000 in    136269798 cycles
+              mul3(123) calculated  806105100000000 in    213049347 cycles
+              
+polynomial 2 takes 2/3 of the time of polynomial 1
+
+is_odd2 takes 1/7 of the time of isOdd1
+
+mul2 is roughly the same as mul1, with mul1 being slightly faster
+
+3. the c code for each function, when ran with the -O3 compiler optimization, ran faster than the #1 options but slightly slower than the #2 options

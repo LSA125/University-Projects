@@ -1,0 +1,30 @@
+How much faster was the by-row access of the rectangular array than the by-column when your array fits in L1 cache? (Compare the worst case of each.):
+
+cashe size: 192 KiB
+max array size: 192*1024/8 (cashe size(kiB) -> cashe size(Bytes) / size of double(Bytes) = 24576
+
+using array size 20000:
+
+worst case col:
+Calculated -71.8931 in     0.06 ms on 8*2500 array.
+
+worse case row:
+Calculated -71.8931 in     0.15 ms on 1*20000 array.
+
+
+How does the performance of the by-column summation change as the array gets larger than the caches?:
+
+while the starting and ending few numbers are similar, the average time for the elements just under the l1 cache (24000  is about half that of the numbers just above the l1 cashe (25000)
+
+Your experience likely matches mine: for large arrays, the by-column summation of an array with a small height (≈single-digits) is consistently slower than a small width. Why do you think that is?
+
+with a small height the jump in memory is a lot bigger = bad locality (data of each row is far away and wont be stored in better cache)
+with a large height small width the jump is a lot smaller = good locality (data of each row is closer and more likely in better cache)
+
+Did avoiding the branch with a conditional move speed up the hailstone length calculation? By how much? How did the C code compare? [I believe this is a very rare case where our assembly can slightly beat gcc -O3. Sadly, clang -O3 still beats my times.]
+
+       hailstone_length_c calculated  103275238 in 139 ms
+         hailstone_length calculated  103275238 in 190 ms
+    hailstone_length_cmov calculated  103275238 in 123 ms
+
+cmov made the the code run at 65% the normal speed - faster than the c code as well.

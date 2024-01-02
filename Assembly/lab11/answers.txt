@@ -1,0 +1,30 @@
+                   warmup took    21.1 ms
+                   warmup took    20.6 ms
+             dot_double_c took    20.6 ms
+               dot_double took    21.3 ms
+           dot_double_vec took    13.2 ms
+            dot_double_vc took    14.5 ms
+
+             dot_single_c took    19.1 ms
+               dot_single took    19.2 ms
+           dot_single_vec took     6.4 ms
+            dot_single_vc took     7.4 ms
+
+       map_poly_double_c1 took    27.5 ms
+       map_poly_double_c2 took    27.0 ms
+          map_poly_double took    32.9 ms
+      map_poly_double_vec took    27.7 ms
+       map_poly_double_vc took    26.4 ms
+
+        map_poly_single_c took    13.3 ms
+          map_poly_single took    20.8 ms
+      map_poly_single_vec took    13.5 ms
+       map_poly_single_vc took    13.4 ms
+       
+1) the functions using vector class sped up roughly 20%
+
+2) the singles sped up far more than the doubles
+
+3) The Map_poly function is simpler and only one array
+
+the dot product function has to mirror two arrays, which the compiler may not know are equal length

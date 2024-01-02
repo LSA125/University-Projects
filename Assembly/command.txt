@@ -1,0 +1,11 @@
+gcc -Wall -Wpedantic -std=c17 -march=haswell -O3 -g -c timing.c lab10.S lab10c.c \
+&& gcc -Wall -Wpedantic -std=c17 -march=haswell -O3 timing.o lab10.o lab10c.o \
+&& ./a.out
+
+g++ -Wall -Wpedantic -std=c++17 -march=haswell -O3 -g -c tests.cpp lab11.S lab11c.cpp lab11_vc.cpp \
+&& g++ -Wall -Wpedantic -std=c++17 -march=haswell -O3 tests.o lab11.o lab11c.o lab11_vc.o \
+&& ./a.out
+
+g++ -Wall -Wpedantic -std=c++17 -march=haswell -O3 -g -c -funsafe-math-optimizations timing.cpp lab11.S lab11c.cpp lab11_vc.cpp \
+&& g++ -Wall -Wpedantic -std=c++17 -march=haswell -O3 -funsafe-math-optimizations timing.o lab11.o lab11c.o lab11_vc.o \
+&& ./a.out

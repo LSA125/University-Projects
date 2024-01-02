@@ -1,0 +1,3 @@
+The function "do_something" returns the nearest sum of all odd numbers greater than or equal to the input
+
+I used call preserved registered to hold values that i need after a call a function, this prevents the function from "nuking" the values for a,b,c, and x. I used rcx, a non-preserved register to count add together all the values after i was done calling f as no function could alter it at that point, and i wouldnt have to add another value to the stack.

@@ -1,0 +1,44 @@
+1: I used valgrind to check my array-2d.c before i submitted last week. No memory leaks
+
+2: the comparisons should take the least time. swapping values will be slow because of the stall on tmp = arr[j] and the arr[i] = tmp afterwards. On a random array, branch mispredictions will ~50% of the time cause the swap to run again causing a large delay
+
+comparison = 5%
+swap = 45%
+misprediction = 50%
+
+3: I ran reverse sorted, sorted, and random.
+
+4: on a random array 8.9% of branches were branch misses, of that 99.67% were from bubble sort, which:
+ 99.94 │    → jbe     12bd <bubble_sort(double*, unsigned long)+0x32>
+ 99.94% was from the line if(array[i] > array[j])
+ 
+ 5: the number of l1 cashe misses increased with the array height. 
+ Height 1:
+ 1.16% of all L1-dcache hits  
+Height 100:
+4.86% of all L1-dcache hits  
+Height 10000
+9.15% of all L1-dcache hits 
+
+It matches with my expectations as the memory access will have larger jumps
+ and what it jumps to is more likely not to be in the l1 cashe
+ 
+ 
+
+6: Cashegrind also confirms my expectations:
+height 1:
+D   refs:      240,059,958
+D1  misses:      2,003,367 
+
+height 100:
+D   refs:      240,059,967
+D1  misses:      9,003,366 
+
+however cashe grind reports a smaller number of cashe misses:
+height 1:
+2/240 ~ 0.8%
+
+height 100:
+9/240 ~ 3.8%
+
+this is probably due to the smaller array size
