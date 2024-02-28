@@ -1,0 +1,7 @@
+key 4 10
+key 28 10
+key 26 5
+door 10 0
+spikes 20 7
+spikes 24 17
+speed 13 14

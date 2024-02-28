@@ -1,0 +1,11 @@
+key 1 18  
+key 25 4  
+key 11 12
+key 13 18
+door 28 20
+spikes 22 9
+spikes 22 15
+spikes 11 19
+speed 22 4
+monster 25 8
+speed 2 18
